@@ -33,12 +33,14 @@ Create a script in Ubuntu to change the MAC address. This change is temporary bu
   
   exec /sbin/init
   ```
+  Make sure the script is executable:
+  `chmod +x /home/yves/.sys/set-mac.sh`
 
 2. **Update GRUB Boot Parameters:**
    Adjust the GRUB boot parameters on the Windows side using Grub2Win.
 
    **GRUB2 Boot Parameter:**
-   `verbose init=/home/yves/.sys/set-mac.sh`
+   `verbose  init=/home/yves/.sys/set-mac.sh -- `
 
 ### Important Notes
 - The script must exist, otherwise, the boot process will hang.
